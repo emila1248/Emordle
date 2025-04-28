@@ -9,7 +9,7 @@ int StartingHeight = 720;
 int main () {
 	
     // Tell the window to use vsync and work on high DPI displays
-	SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI);
+	SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI | FLAG_MSAA_4X_HINT);
 	SearchAndSetResourceDir("resources");
 
     // Init window
@@ -24,7 +24,7 @@ int main () {
     Font defaultFont = LoadFontEx("fonts/Figtree/Figtree-Regular.ttf", 48, 0, 0);
 
     Button testButton{ScreenWCenter, ScreenHCenter, 100, 60, defaultFont, "Button"};
-    testButton.setStyle(theme.color3, theme.color5, 2, theme.color8, 0.5);
+    testButton.setStyle(theme.color3, theme.color5, 6, theme.color8, 0.5);
 
     // Set texture filters
     SetTextureFilter(defaultFont.texture, TEXTURE_FILTER_BILINEAR);
