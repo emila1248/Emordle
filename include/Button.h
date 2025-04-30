@@ -1,7 +1,6 @@
 #pragma once
 #include "raylib.h"
 #include <string>
-#include <string_view>
 
 class Button {
 
@@ -10,7 +9,9 @@ private:
     int width;
     int height;
     Font font;
-    std::string_view text;
+    std::string text;
+    float fontSize;
+    bool defineByCenter;
 
     Color fill = WHITE;
     Color stroke = BLACK;
@@ -18,17 +19,17 @@ private:
     Color textColor = BLACK;
     float roundness = 0.5;
 
-    bool defineByCenter = true;
-
-    bool disabled;
+    bool disabled = false;
 
 public:
-    Button(float x, float y, int width, int height, Font font, std::string text) {
+    Button(float x, float y, int width, int height, Font &font, std::string text, bool defineByCenter) {
         this->pos = {x, y};
         this->width = width;
         this->height = height;
         this->font = font;
         this->text = text;
+        this->fontSize = height - 16;
+        this->defineByCenter = defineByCenter;
     }
 
     void setStyle(Color fill, Color stroke, float strokeWeight, Color textColor, float roundness) {
