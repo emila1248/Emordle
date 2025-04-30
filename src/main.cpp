@@ -23,8 +23,8 @@ int main () {
     Theme theme = *THEMES[0];
     Font defaultFont = LoadFontEx("fonts/Figtree/Figtree-Regular.ttf", 48, 0, 0);
 
-    Button testButton{ScreenWCenter, ScreenHCenter, 160, 60, defaultFont, "Button", true};
-    testButton.setStyle(theme.color3, theme.color5, 6, theme.color8, 0.4);
+    Button testButton{ScreenWCenter, ScreenHCenter, 130, 50, defaultFont, "Button", true};
+    testButton.setStyle(theme.color3, theme.color5, 8, theme.color8, 0.4);
 
     // Set texture filters
     SetTextureFilter(defaultFont.texture, TEXTURE_FILTER_BILINEAR);
