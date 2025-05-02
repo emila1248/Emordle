@@ -1,4 +1,5 @@
 #include "Button.h"
+#include "Theme.h"
 
 // Draw
 void Button::Draw() {
@@ -12,18 +13,14 @@ void Button::Draw() {
     }
 
     // Determine correct color
-    Color drawFill;
-    Color drawStroke;
-    Color drawTextFill;
+    Color drawFill = fill;
+    Color drawStroke = stroke;
+    Color drawTextFill  = textFill;
 
     if (mouseIsOver()) {
-        drawFill = RED;
-        drawStroke = RED;
-        drawTextFill = RED;
-    } else {
-        drawFill = fill;
-        drawStroke = stroke;
-        drawTextFill = textFill;
+        drawFill = Theme::lighten(drawFill);
+        drawStroke = Theme::lighten(drawStroke);
+        drawTextFill = Theme::lighten(drawTextFill);
     }
 
     // Draw stroke
