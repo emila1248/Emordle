@@ -1,6 +1,6 @@
-#include "Scenes.h"
 #include "raylib.h"
 #include "globals.h"
+#include "Scenes.h"
 #include "Button.h"
 
 void Scenes::title() {

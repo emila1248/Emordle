@@ -1,8 +1,6 @@
 #include "raylib.h"
 #include "resource_dir.h" // utility header for SearchAndSetResourceDir
 #include "globals.h"
-#include "Scenes.h"
-#include "Button.h"
 
 int StartingWidth = 1080;
 int StartingHeight = 720;
