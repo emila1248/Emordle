@@ -3,5 +3,5 @@
 
 class Scene {
 public:
-    void draw(void(*drawFunc)()) {};
+    void draw(void(*drawFunc)()) { drawFunc(); };
 };
