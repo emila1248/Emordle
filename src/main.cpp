@@ -1,6 +1,7 @@
 #include "raylib.h"
 #include "resource_dir.h" // utility header for SearchAndSetResourceDir
-#include "constants.h"
+#include "globals.h"
+#include "Scenes.h"
 #include "Button.h"
 
 int StartingWidth = 1080;
@@ -15,16 +16,9 @@ int main () {
     // Init window
     InitWindow(StartingWidth, StartingHeight, "Emordle");
 
-    // Global vars
-    int ScreenWidth = StartingWidth;
-    int ScreenHeight = StartingHeight;
-    int ScreenWCenter = ScreenWidth/2;
-    int ScreenHCenter = ScreenHeight/2;
-    Theme theme = *THEMES[0];
-    Font defaultFont = LoadFontEx("fonts/Figtree/Figtree-Regular.ttf", 48, 0, 0);
-
-    Button testButton{ScreenWCenter, ScreenHCenter, 100, 36, defaultFont, "Button", true};
-    testButton.setStyle(theme.color3, theme.color5, 3, theme.color8, 0.4);
+    // Initialize global vars
+    currentTheme = *THEMES[0];
+    defaultFont = LoadFontEx("fonts/Figtree/Figtree-Regular.ttf", 48, 0, 0);
 
     // Set texture filters
     SetTextureFilter(defaultFont.texture, TEXTURE_FILTER_BILINEAR);
@@ -32,17 +26,10 @@ int main () {
     // GAME LOOP
 	while (!WindowShouldClose()) {
 		
-        // Update global vars
-        ScreenWidth = GetScreenWidth();
-        ScreenHeight = GetScreenHeight();
-        ScreenWCenter = ScreenWidth/2;
-        ScreenHCenter = ScreenHeight/2;
-
-        // Begin Drawing
         BeginDrawing();
-		ClearBackground(theme.color1);
+		ClearBackground(currentTheme.color1);
         
-		testButton.Draw();
+		currentScene.draw(titleScene);
 		
 		EndDrawing();
 	}

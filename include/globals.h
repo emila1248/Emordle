@@ -1,8 +1,15 @@
 #pragma once
-#include "Theme.h"
 #include <array>
+#include "Theme.h"
+#include "Scene.h"
+#include "Scenes.h"
 
-const Theme* LIGHT = new Theme{
+inline Font defaultFont;
+inline Theme currentTheme;
+inline Scene currentScene;
+inline void (*titleScene)(){Scenes::title};
+
+inline Theme* LIGHT = new Theme{
     {255, 255, 255, 255},
     {219, 219, 219, 255},
     {183, 183, 183, 255},
@@ -13,7 +20,7 @@ const Theme* LIGHT = new Theme{
     {0, 0, 0, 255}
 };
 
-const Theme* DARK = new Theme{
+inline Theme* DARK = new Theme{
     {0, 0, 0, 255},
     {37, 37, 37, 255},
     {73, 73, 73, 255},
@@ -25,4 +32,4 @@ const Theme* DARK = new Theme{
 };
 
 // Array of Themes
-const std::array<const Theme*, 4> THEMES {LIGHT, DARK, nullptr, nullptr};
+inline std::array<const Theme*, 4> THEMES {LIGHT, DARK, nullptr, nullptr};

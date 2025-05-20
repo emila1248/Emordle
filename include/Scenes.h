@@ -1,3 +1,8 @@
 #pragma once
+#include "Theme.h"
 
-void titleScene();
+namespace Scenes {
+
+    void title();
+
+}

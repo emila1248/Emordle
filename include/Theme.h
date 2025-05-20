@@ -2,14 +2,14 @@
 #include "raylib.h"
 
 struct Theme {
-    const Color color1;
-    const Color color2;
-    const Color color3;
-    const Color color4;
-    const Color color5;
-    const Color color6;
-    const Color color7;
-    const Color color8;
+    Color color1;
+    Color color2;
+    Color color3;
+    Color color4;
+    Color color5;
+    Color color6;
+    Color color7;
+    Color color8;
 
     static Color lighten(Color color) {
         unsigned char rValue;
